@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { HeroSection } from '@/components/HeroSection';
 import { FloodChart } from '@/components/FloodChart';
 import { RiskTable } from '@/components/RiskTable';
+import { FacilitiesMap } from '@/components/FacilitiesMap';
 import { Footer } from '@/components/Footer';
 import { FloodData, fetchAllFloodData } from '@/lib/floodApi';
 import { useToast } from '@/hooks/use-toast';
@@ -82,6 +83,9 @@ const Index = () => {
           <RiskTable floodData={floodData} isLoading={isLoading} />
         </div>
       </main>
+
+      {/* WASH Facilities Map */}
+      <FacilitiesMap className="bg-muted/30" />
 
       <Footer />
     </div>
