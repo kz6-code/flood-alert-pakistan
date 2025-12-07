@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { HeroSection } from '@/components/HeroSection';
 import { FloodChart } from '@/components/FloodChart';
 import { RiskTable } from '@/components/RiskTable';
+import { FloodHeatmap } from '@/components/FloodHeatmap';
 import { FacilitiesMap } from '@/components/FacilitiesMap';
 import { Footer } from '@/components/Footer';
 import { FloodData, fetchAllFloodData } from '@/lib/floodApi';
@@ -84,8 +85,11 @@ const Index = () => {
         </div>
       </main>
 
+      {/* Flood Risk Heatmap */}
+      <FloodHeatmap floodData={floodData} isLoading={isLoading} className="bg-muted/30" />
+
       {/* WASH Facilities Map */}
-      <FacilitiesMap className="bg-muted/30" />
+      <FacilitiesMap />
 
       <Footer />
     </div>
